@@ -1,9 +1,22 @@
 // out: ../css/master.css, compress: true
 
+/* @group Colors */
+
+@LightGrey: rgb(220, 220, 220);
+@Grey: rgb(100, 100, 100);
+@AlmostBlack: rgb(80, 80, 80);
+
+@NavDropShaddow: rgba(0, 0, 0, 0.2);
+
+/* @end Colors */
+
 /* @group Basic styles / overrides */
-body {
+html, body {
     margin: 0;
     padding: 0;
+    font-family: arial, helvetica, sans-serif;
+    color: @AlmostBlack;
+    height: 100%;
 }
 
 img {
@@ -66,9 +79,127 @@ ul {
 
 /* @end Reusable elements */
 
+/* @group Navigation */
+
+nav {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    height: 36px;
+    background-color: white;
+    border-bottom: 1px solid @LightGrey;
+    box-shadow: 0 0 2px @NavDropShaddow;
+
+    ul {
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        text-transform: uppercase;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            float: left;
+            width: 100%;
+            height: 36px;
+
+            a {
+                display: block;
+                width: auto;
+                height: 18px;
+                padding: 11px 9px 7px 9px;
+            }
+        }
+    }
+
+    .menu-button {
+        float: left;
+        margin: 5px;
+        width: 18px;
+        height: 18px;
+        padding: 3px;
+        border-radius: 2px;
+        border: 1px solid @LightGrey;
+
+        .menu-line {
+            float: left;
+            width: 18px;
+            height: 2px;
+            margin: 3px 0 0 0;
+            background-color: @Grey;
+        }
+    }
+}
+
+/* @end Navigation */
+
+/* @group Header */
+
+header {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+
+    .inner {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 36px 12px 12px 12px;
+    }
+}
+
+/* @end Header */
+
+/* @group Main */
+
+main {
+    margin: auto;
+    width: 100%;
+    height: 500px;
+    max-width: 1280px;
+}
+
+/* @end Main */
+
+/* @group Footer */
+
+footer {
+    margin: auto;
+    width: 100%;
+    height: 200px;
+    background-color: green;
+    clear: both;
+    max-width: 1280px;
+}
+
+/* @end Footer */
+
 /* @group Small devices */
 @media screen and (min-width: 601px) {
 
+    nav {
+        padding-left: 12px;
+        padding-right: 12px;
+
+        .menu-button {
+            display: none;
+        }
+
+        ul {
+            width: auto;
+
+            li {
+                width: auto;
+            }
+        }
+    }
+    
 }
 /* @end Small devices */
 
